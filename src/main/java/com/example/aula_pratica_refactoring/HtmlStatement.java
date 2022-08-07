@@ -6,20 +6,19 @@ public class HtmlStatement extends Statement {
 
     public String value(Customer aCustomer) {
         Enumeration rentals = aCustomer.getRentals();
-        String result = "<H1>Rentals for <EM>" + aCustomer.getName() +
-                "</EM></H1><P>\n";
+        String result = "Rental Record for " + aCustomer.getName()+" ";
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            //show figures for each rental
+            //show figures for this rental
             result += each.getMovie().getTitle()+ ": " +
-                    String.valueOf(each.getCharge()) + "<BR>\n";
+                    String.valueOf(each.getCharge())+ " ";
         }
         //add footer lines
-        result += "<P>You owe <EM>" +
-                String.valueOf(aCustomer.getTotalCharge()) + "</EM><P>\n";
-        result += "On this rental you earned <EM>" +
+        result += "Amount owed is " +
+                String.valueOf(aCustomer.getTotalCharge()) + " ";
+        result += "You earned " +
                 String.valueOf(aCustomer.getTotalFrequentRenterPoints()) +
-                "</EM> frequent renter points<P>";
+                " frequent renter points";
         return result;
     }
 }
