@@ -2,7 +2,7 @@ package com.example.aula_pratica_refactoring;
 
 import java.util.Enumeration;
 
-public class HtmlStatement extends Statement {
+public class TemplateValue {
 
     public String value(Customer aCustomer) {
         Enumeration rentals = aCustomer.getRentals();
